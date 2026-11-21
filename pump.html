@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Centrifugal Pump – Mathieu Robert</title>
+<meta name="description" content="Portfolio of Mathieu Robert, engineering student at Arts et Métiers (France): manufacturing and precision engineering projects.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="site-header"><div class="container">
+<a class="brand" href="index.html">Mathieu Robert</a>
+<nav class="nav"><a href="index.html">Home</a><a href="projects.html" class="active">Projects</a><a href="academics.html">Academics</a><a href="experience.html">Experience</a><button id="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button></nav>
+</div></header>
+<main><div class="container">
+
+<div class="p-head">
+<a href="projects.html" class="muted small">← All projects</a>
+<h1 style="margin-top:14px">Centrifugal Pump: CFD Design Validation</h1>
+<p class="sub">Designing a pump, then checking with CFD whether the numbers can be trusted before relying on them.</p>
+<div class="meta"><div><b>Context</b><span>Energetics project, Arts et Métiers</span></div><div><b>Team</b><span>2 students</span></div><div><b>My role</b><span>Design and CFD simulations, with my partner</span></div><div><b>Year</b><span>2025–2026</span></div></div>
+</div>
+<div class="top">
+<div class="objective"><span class="label">Objective</span><p>Design a centrifugal pump delivering a head of 12.5 m at a flow rate of 11.5 m³/h, and verify its performance with CFD.</p></div>
+<div class="tools"><span class="label">Tools & methods</span><ul><li>CAD of impeller and volute</li><li>STAR-CCM+ (CFD)</li><li>Mesh convergence study</li><li>k-ε, k-ω SST, Reynolds stress models</li></ul></div>
+</div>
+<div class="kpis"><div class="kpi"><b>12.65 m</b><span>simulated head (12.5 m required)</span></div><div class="kpi"><b>≈ 75 %</b><span>efficiency at the operating point</span></div><div class="kpi"><b>3</b><span>turbulence models compared</span></div></div>
+<section class="step full"><div class="text"><div class="num">STEP 01</div><h3>Can the mesh be trusted?</h3><p>At a fixed flow rate, the base size of the mesh was varied to measure its influence on the head and the efficiency. A finer mesh gives more accurate results but a longer computing time: a base size of 0.02 m gave the best compromise.</p></div></section><section class="step full"><div class="text"><div class="num">STEP 02</div><h3>Which turbulence model?</h3><p>The same case was run with three turbulence models (k-ε, k-ω SST and Reynolds stress) to check that the conclusions did not depend on the choice of model.</p></div></section><section class="step"><div class="text"><div class="num">STEP 03</div><h3>Characteristic curves and flow analysis</h3><p>The flow rate was swept to obtain the head H(Q) and the efficiency η(Q) curves, and the trends were explained with simple physical arguments:</p>
+<ul><li>the head falls as the flow rate rises, since the power supplied to the pump is fixed;</li><li>the efficiency follows a bell curve, with a maximum of 77%;</li><li>the velocity fields show turbulence in the impeller and high velocities in the narrowest section of the volute.</li></ul></div><div><div class="carousel"><div class="slide"><a href="img/pump/velocity-design-point.jpg" target="_blank"><img src="img/pump/velocity-design-point.jpg" alt="Relative velocity near the best-efficiency point" loading="lazy"></a><div class="cap">Relative velocity near the best-efficiency point</div></div><div class="slide"><a href="img/pump/velocity-high-flow.jpg" target="_blank"><img src="img/pump/velocity-high-flow.jpg" alt="Relative velocity at high flow rate" loading="lazy"></a><div class="cap">Relative velocity at high flow rate</div></div><div class="slide"><a href="img/pump/velocity-low-flow.jpg" target="_blank"><img src="img/pump/velocity-low-flow.jpg" alt="Relative velocity at low flow rate" loading="lazy"></a><div class="cap">Relative velocity at low flow rate</div></div><button class="nav-btn prev" aria-label="Previous">‹</button><button class="nav-btn next" aria-label="Next">›</button><div class="dots"></div></div></div></section>
+<div class="results"><span class="label">Results</span><ul><li>Simulated head of 12.65 m at the design point, above the 12.5 m required.</li><li>Efficiency of about 75% at the operating point (77% at best efficiency).</li></ul><p class="learned"><b>What I learned:</b> a simulation is only useful if its results are questioned: the mesh and the model must be checked before the numbers are used.</p><div class="downloads"><a class="btn" href="pdf/pump-cfd-report-FR.pdf" download>⤓ CFD report (PDF, in French)</a></div></div>
+<div class="pnav"><a href="explorer-kit.html">← Aluminium Prototype</a><a href="piezo.html">Piezoelectric Harvester →</a></div>
+
+</div></main>
+<footer><div class="container">
+<span>© 2026 Mathieu Robert</span>
+<span><a href="mailto:mathieu.robert@ensam.eu">mathieu.robert@ensam.eu</a> · <a href="https://github.com/mathieurobert-ensam">GitHub</a></span>
+</div></footer>
+<script src="js/main.js"></script>
+</body>
+</html>
